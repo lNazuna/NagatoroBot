@@ -7,57 +7,57 @@ const Ticket = require('../../schemas/TicketDB');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('tickets')
-    .setDescription('Ticket options and setup')
+    .setDescription('Opções e configuração de tickets')
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addSubcommand(subcommand =>
         subcommand.setName('setup')
-        .setDescription('Select the user to be banned')
+        .setDescription('Configuração do sistema de ticket')
         .addChannelOption(option =>
-            option.setName('channel')
-            .setDescription('Select the channel where the tickets should be created')
+            option.setName('canal')
+            .setDescription('Selecione o canal onde os tickets devem ser criados')
             .addChannelTypes(ChannelType.GuildText)
             .setRequired(true)
         )
         .addChannelOption(option =>
-            option.setName('category')
-            .setDescription('Select the parent where the tickets should be created.')
+            option.setName('categoria')
+            .setDescription('Selecione a categoria onde os tickets devem ser criados..')
             .addChannelTypes(ChannelType.GuildCategory)
             .setRequired(true)
         )
         .addChannelOption(option =>
             option.setName('transcripts')
-            .setDescription('Select the channel where the transcripts should be sent.')
+            .setDescription('Selecione o canal para onde as transcrições devem ser enviadas.')
             .addChannelTypes(ChannelType.GuildText)
             .setRequired(true)
         )
         .addRoleOption(option =>
-            option.setName('support-role')
-            .setDescription('Support role for the ticket.')
+            option.setName('cargo-de-suporte')
+            .setDescription('Cargo de suporte para o ticket.')
             .setRequired(true)
         )
         .addStringOption(option =>
-            option.setName('button-name')
-            .setDescription('Name of button')
+            option.setName('nome-do-botão')
+            .setDescription('Nome do botão')
             .setRequired(true)
         )
         .addStringOption(option =>
             option.setName('emoji')
-            .setDescription('put the emoji for button')
+            .setDescription('coloque o emoji para botão')
             .setRequired(true)
         )
         .addStringOption(option =>
-            option.setName('description')
-            .setDescription('The text to send with the ticket panel')
+            option.setName('descrição')
+            .setDescription('O texto a ser enviado com o painel de tickets')
             .setRequired(false)
         )
     )
     .addSubcommand(subcommand =>
-        subcommand.setName('delete-users')
-        .setDescription('Delete the users tickets (only use this command if you removed the ticket manually)')
+        subcommand.setName('excluir-usuários')
+        .setDescription('Exclua os tickets dos usuários (use este comando somente se você removeu o ticket manualmente)')
     )
     .addSubcommand(subcommand =>
-        subcommand.setName('delete-setup')
-        .setDescription('Delete the ticket system (panel)')
+        subcommand.setName('excluir-setup')
+        .setDescription('Excluir o sistema de tickets (painel)')
     ),
 
     /**
@@ -69,12 +69,12 @@ module.exports = {
         const { guild, options } = interaction;
 
         if (interaction.options.getSubcommand() === "setup") {
-            const channel = options.getChannel('channel');
-            const category = options.getChannel('category');
+            const channel = options.getChannel('canal');
+            const category = options.getChannel('categoria');
             const transcripts = options.getChannel('transcripts');
-            const handlers = options.getRole('support-role');
-            const description = options.getString('description');
-            const button = options.getString('button-name');
+            const handlers = options.getRole('cargo-de-suporte');
+            const description = options.getString('descrição');
+            const button = options.getString('nome-do-botão');
             const emoji = options.getString('emoji');
             await TicketSetup.findOneAndUpdate(
               { GuildID: guild.id },
@@ -147,7 +147,7 @@ module.exports = {
               components: [new ActionRowBuilder().addComponents(buttonshow)],
             }).catch(error => {return});
         } 
-        if (interaction.options.getSubcommand() === "delete-users") {
+        if (interaction.options.getSubcommand() === "excluir-usuários") {
     
           const ticketData = await TicketSetup.findOne({
             GuildID: interaction.guild.id,
@@ -194,7 +194,7 @@ module.exports = {
           });
         }
     
-        if (interaction.options.getSubcommand() === "delete-setup") {
+        if (interaction.options.getSubcommand() === "excluir-setup") {
           const ticketData = await TicketSetup.findOne({
             GuildID: interaction.guild.id,
           });
