@@ -1,6 +1,6 @@
 {
   "name": "nagatoro-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./structures/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "discord-html-transcripts": "^3.2.0",
     "discord.js": "^14.13.0",
     "glob": "^10.3.10",
-    "kandaraku": "^1.5.5",
+    "kandaraku": "^1.6.0",
     "mongoose": "^8.0.0",
     "ms": "^2.1.3"
   }
