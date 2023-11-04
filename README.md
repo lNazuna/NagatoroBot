@@ -16,6 +16,32 @@ Bot criado para usar a Kandaraku API, com varios recursos para facilitar seu uso
 - Chatbot & AI Image Generator
 
 
+## Regras
+
+**Source Code**
+
+    » O bot e open source ou seja pode usar bot e mexer no codigo, mas não e permitido fazer-se de dono/criador do nagatoro bot todos os direitos são apenas de @nazuna
+    » Qualquer tentativa de vender o codigo desse bot para obter lucro do mesmo, a pessoa que fizer isso será processada por roubo dos direitos de autor e por obter lucro de algo que não é seu
+
+**Suporte**
+
+    » Todo o suporte ao nagatoro bot e totalmente grátis e apenas a esse bot
+	» Terá todo o suporte da nossa equipa para o ajudar a hospedar o bot em qualquer hospedagem (replit/heroku etc)
+    » Não fornecemos suporte de programação 
+    » Não é permitido pedir suporte em mensagens diretas com nossa equipe
+    » Você sabe que nossa equipe não é obrigada a suporte caso você tenha violado alguma de nossas regras.
+    » Ao modificar o código-fonte do bot poderá perder o suporte apenas as modificações que fizeram
+
+**Termos de serviço**
+
+    » Você não pode vendero código pois o mesmo é grátis para uso apenas o criador @nazuna tem direito para isso.
+    » Você não pode se beneficiar financeiramente de forma alguma com o Nagatoro Bot
+    » Qualquer tentativa de venda ou beneficar financeiramente do código fonte do nosso bot será criado um processo contra essa pessoa.
+
+**Disclaimers**
+
+    » Posso alterar ou atualizar qualquer um dos termos listados nesta lista quando achar necessário.
+    » Se você usar Source Code do NagatoroBot, você automaticamente aceita nossos termos de serviço
 ## Como usar o Bot?
 
 Clone o projeto
