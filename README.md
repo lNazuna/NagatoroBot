@@ -1,5 +1,6 @@
+![App Screenshot](https://i.imgur.com/H9XrqDn.gif)
 
-# Nazuna Bot
+# Nagatoro Bot
 
 Bot criado para usar a Kandaraku API, com varios recursos para facilitar seu uso da API entre outros recursos.
 
@@ -91,3 +92,4 @@ Discord Bot
 
 Kandaraku API
 - [CroneGamesPlays](https://github.com/CroneGamesPlays)
+
