@@ -1,4 +1,4 @@
-![App Screenshot](https://i.imgur.com/H9XrqDn.gif)
+![App Screenshot](https://i.imgur.com/vCQT7Je.gif)
 
 # Nagatoro Bot
 
