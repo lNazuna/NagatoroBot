@@ -76,6 +76,44 @@ module.exports = {
                 .setDescription("insira o url do anime para adicionar na base de dados, pode ver aqui https://myanimelist.net/")
                 .setRequired(true)
             )
+        )
+        .addSubcommand(subcommand =>
+            subcommand.setName('adicionar-temporada')
+            .setDescription('Adicione a temporada a base de dados')
+            .addIntegerOption(option => 
+                option.setName("id")
+                .setDescription("insira o id da temporada para adicionar na base de dados, pode ver aqui https://myanimelist.net/")
+                .setRequired(true)
+            )
+            .addIntegerOption(option => 
+                option.setName("número")
+                .setDescription("insira o número da temporada para adicionar na base de dados")
+                .setRequired(true)
+            )
+        )
+        .addSubcommand(subcommand =>
+            subcommand.setName('adicionar-episódio')
+            .setDescription('Adicione episódios a base de dados')
+            .addIntegerOption(option => 
+                option.setName("anime-id")
+                .setDescription("insira o id do anime, pode ver aqui https://myanimelist.net/")
+                .setRequired(true)
+            )
+            .addIntegerOption(option => 
+                option.setName("temporada-numero")
+                .setDescription("insira o número da temporada para adicionar na base de dados")
+                .setRequired(true)
+            )
+            .addIntegerOption(option => 
+                option.setName("episódio-numero")
+                .setDescription("insira o número do episódio para adicionar na base de dados")
+                .setRequired(true)
+            )
+            .addStringOption(option => 
+                option.setName("upload-episódio")
+                .setDescription("insira o url do episódio para adicionar na base de dados (tem de ser .mp4)")
+                .setRequired(true)
+            )
         ),
 
     /**
@@ -93,15 +131,18 @@ module.exports = {
             const name = options.getString('nome');
 
             kand.getAnimeSerieInfo({ mal_name: `${name}` }).then((response) => {
+
+                var animeURL = response.content.AnimeUrl
+                var AnimeURLReplace = animeURL.replace(/( )/g,"%");
     
-                if(response.error){
+                if(response[0]){
     
                     editReply(interaction, "❌", response.error)
     
                 } else {
     
                     const embed = new EmbedBuilder()
-                    .setTitle(`${response.content.AnimeEnglishTitle} | ${response.content.AnimeJapaneseTitle}`)
+                    .setTitle(`${response.content.AnimeName} | ${response.content.AnimeJapaneseTitle}`)
                     .setColor("Random")
                     .setDescription(`**Sinopse** \n\n ${response.content.AnimeSynopsis}`)
                     .addFields(
@@ -173,7 +214,7 @@ module.exports = {
         
                         new ButtonBuilder()
                         .setStyle(ButtonStyle.Link)
-                        .setURL(response.content.AnimeUrl)
+                        .setURL(AnimeURLReplace)
                         .setLabel("Pagina do Anime"),
             
                         new ButtonBuilder()
@@ -334,8 +375,7 @@ module.exports = {
 
             kand.getAnimeEpisodeInfo({ mal_name: `${anime}`, season_number: `${seasonNumber}`, episode_number: `${episodeNumber}` }).then((response) => {
 
-                var download = response.content.EpisodeInfo[0].EpisodeDownload
-                var downloadReplace = download.replace(/( )/g,"%");
+                console.log(response)
 
 
                 if(response.error){
@@ -343,6 +383,9 @@ module.exports = {
                     editReply(interaction, "❌", response.error)
     
                 } else {
+
+                    var download = response.content.EpisodeInfo[0].EpisodeDownload
+                    var downloadReplace = download.replace(/( )/g,"%");
     
                     const embed = new EmbedBuilder()
                     .setTitle(`${response.content.EpisodeName}`)
@@ -458,7 +501,49 @@ module.exports = {
     
                 } else {
 
-                    editReply(interaction, "✅", response.content)
+                    editReply(interaction, "✅", response.content.sucess)
+
+                }
+
+            })
+
+        } if (options.getSubcommand() === "adicionar-temporada") {
+
+            const animeID = options.getInteger('id');
+            const seasonNumber = options.getInteger('número');
+
+            kand.addAnimeSeasonInfo({ mal_id: `${animeID}`, season_number: `${seasonNumber}` }).then(response => {
+
+                if(response[0]){
+    
+                    editReply(interaction, "❌", response.error)
+    
+                } else {
+
+                    editReply(interaction, "✅", response.content.sucess)
+
+                }
+
+            })
+
+        } if (options.getSubcommand() === "adicionar-episódio") {
+
+            const animeID = options.getInteger('anime-id');
+            const seasonNumber = options.getInteger('temporada-numero');
+            const episodeNumber = options.getInteger('episódio-numero');
+            const uploadEpisode = options.getString('upload-episódio');
+
+            kand.addAnimeEpisodeInfo({ mal_id: `${animeID}`, season_number: `${seasonNumber}`, episode_number: `${episodeNumber}`, download_uploader_videomp4_url: `${uploadEpisode}` }).then(response => {
+
+                console.log(response)
+
+                if(response[0]){
+    
+                    editReply(interaction, "❌", response.error)
+    
+                } else {
+
+                    editReply(interaction, "✅", response.content.sucess)
 
                 }
 
