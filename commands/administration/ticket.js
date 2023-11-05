@@ -134,7 +134,7 @@ module.exports = {
               .setTitle("Sistema de Tickets")
               .setDescription(description == null ? sampleMessage : description)
               .setColor("Aqua")
-              .setImage("https://i.imgur.com/MVWa8pZ.png")
+              .setImage("https://i.imgur.com/N1LljMM.gif")
       
             const buttonshow = new ButtonBuilder()
               .setCustomId('createTicket')

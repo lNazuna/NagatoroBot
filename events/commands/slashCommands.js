@@ -21,7 +21,7 @@ module.exports = {
         const command = commands.get(commandName)
         if (!command) return reply(interaction, "❌", `O comando que você está tentando executar não existe!`) && commands.delete(commandName)
 
-        if (command.owner && !config.developers.includes(user.id)) return reply(interaction, "❌", `Este comando é classificado!`)
+        if (command.owner && !config.developers.includes(user.id)) return reply(interaction, "❌", `Este comando é apenas para desenvolvedores!`)
 
         command.execute(interaction, client)
 
