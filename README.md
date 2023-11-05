@@ -74,6 +74,24 @@ Inicie o servidor
 
 Aqui sera posta todos as atualizações do bot
 
+Versão 1.0.3
+
+```bash
+  - Correção de Bugs
+
+  Corrigido o problema MaxListeners
+
+  - Adicionado
+
+  Comando Ship
+  Comando Waifu (gerar imagens)
+  Sistema de música usando musicard com butões para parar, retomar, aumentar e reduzir volume, repetir, embaralhar, pular, parar
+  Comando play e fila para o sistema de música
+  Sistema de contagem de membros e bots em canais de voz
+  Sistema de entradas e saídas
+  Comando para simular alguns eventos
+```
+
 Versão 1.0.2
 
 ```bash
