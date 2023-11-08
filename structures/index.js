@@ -35,7 +35,7 @@ const client = new CustomClient({
 let { readdirSync } = require('fs');
 client.distube = new DisTube(client, {
     emitNewSongOnly: true,
-    leaveOnFinish: true,// you can change this to your needs
+    leaveOnFinish: false,
     emitAddSongWhenCreatingQueue: false,
     plugins: [
         new SoundCloudPlugin(),
