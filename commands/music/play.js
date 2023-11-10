@@ -8,7 +8,7 @@ module.exports = {
         .setDescription("Mostra a latência atual do bot")
         .addStringOption(option =>
             option.setName("query")
-              .setDescription("Provide the name or url for the song.")
+              .setDescription("Forneça o nome ou URL da música.")
               .setRequired(true)
         ),
 
