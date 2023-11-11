@@ -74,6 +74,27 @@ Inicie o servidor
 
 Aqui sera posta todos as atualizações do bot
 
+Versão 2.0.0
+
+```bash
+  - Correção de Bugs
+
+  Corrigido de adicionar episódios de anime
+  Corrigido de adicionar temporadas de animes
+  
+  - Removido
+  
+  Removido o sistema de música usando o modulo Distube (estava a dar muitos problemas a alguns users)
+
+  - Adicionado
+
+  Reformulado todo o sistema de música 
+  Adicionado para o sistema de música o Lavalink (agora e preciso ter servidor lava link para música funcionar porem é bem melhor que o distube)
+  Alterador todo o sistema do bot agora ta mais clean
+  Adicionado sistema de ouvir músicas pelo spotify (agora funciona sem problemas com o lavalink)
+  Atualizado as dependências para a ultima versão
+```
+
 Versão 1.0.3
 
 ```bash
