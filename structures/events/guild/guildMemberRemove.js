@@ -21,7 +21,7 @@ client.on("guildMemberRemove", async (member) => {
       leaveCanvas.context.font = "72px sans-serif";
       leaveCanvas.context.fillStyle = "#ffffff";
   
-      await Canvas.loadImage("https://i.imgur.com/muVJEnB.jpg").then(async (img) => {
+      await Canvas.loadImage("structures/imagens/guild/leave.jpg").then(async (img) => {
         leaveCanvas.context.drawImage(img, 0, 0, 1024, 500);
         leaveCanvas.context.fillText("Leave", 420, 360);
         leaveCanvas.context.beginPath();

@@ -10,13 +10,13 @@ module.exports = {
         {
             name: 'usuário',
             description: 'O primeiro usuário.',
-            type: ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.User,
             required: true,
         },
         {
             name: 'usuário2',
             description: 'O segundo usuário.',
-            type: ApplicationCommandOptionType.String,
+            type: ApplicationCommandOptionType.User,
             required: true,
         }
     ],
@@ -38,7 +38,7 @@ module.exports = {
         const canvas = Canvas.createCanvas(700, 250)
         const ctx = canvas.getContext("2d")
     
-        const bg = await Canvas.loadImage("https://cdn.discordapp.com/attachments/716216765448978504/858442843197669376/PElrfiWeuvQ.png")
+        const bg = await Canvas.loadImage("structures/imagens/ship/backgroud.png")
         ctx.drawImage(bg, 0, 0, canvas.width, canvas.height)
     
         const avatar = await Canvas.loadImage(user1.displayAvatarURL({ extension: "png", size: 1024 }))
@@ -63,8 +63,8 @@ module.exports = {
         ctx.drawImage(TargetAvatar, 400, 25, 200, 200)
         ctx.restore();
     
-        const heart = await Canvas.loadImage('https://cdn.discordapp.com/attachments/1095289388801470525/1097177793130942464/love.png')
-        const broken = await Canvas.loadImage('https://cdn.discordapp.com/attachments/1095289388801470525/1097177800307388540/broken-heart.png')
+        const heart = await Canvas.loadImage('structures/imagens/ship/love.png')
+        const broken = await Canvas.loadImage('structures/imagens/ship/broken-heart.png')
         const random = Math.floor(Math.random() * 99) + 1
 
         const hearte = (random / 10)

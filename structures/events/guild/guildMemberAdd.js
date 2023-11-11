@@ -21,7 +21,7 @@ client.on("guildMemberAdd", async (member) => {
       welcomeCanvas.context.font = "72px sans-serif";
       welcomeCanvas.context.fillStyle = "#ffffff";
   
-      await Canvas.loadImage("https://i.imgur.com/FAVXQin.jpg").then(async (img) => {
+      await Canvas.loadImage("structures/imagens/guild/welcome.jpg").then(async (img) => {
         welcomeCanvas.context.drawImage(img, 0, 0, 1024, 500);
         welcomeCanvas.context.fillText("Welcome", 360, 360);
         welcomeCanvas.context.beginPath();
