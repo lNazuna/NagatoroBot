@@ -1,34 +1,22 @@
 {
-  "name": "nagatoro-bot",
-  "version": "1.0.3",
-  "description": "",
-  "main": "./structures/index.js",
+  "name": "nagatorobot",
+  "version": "2.0.0",
+  "description": "bot open source nagatoro bot",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./structures/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "nazuna",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.9.0",
-    "@distube/soundcloud": "^1.3.3",
-    "@distube/spotify": "^1.5.1",
-    "@distube/yt-dlp": "^1.1.3",
-    "canvas": "^2.11.2",
-    "chalk": "^4.1.2",
+    "ascii-table": "^0.0.9",
     "discord-html-transcripts": "^3.2.0",
     "discord.js": "^14.13.0",
-    "distube": "^4.1.0",
-    "ffmpeg-static": "^5.2.0",
-    "glob": "^10.3.10",
     "kandaraku": "^1.6.5",
-    "libsodium-wrappers": "^0.7.13",
     "mongoose": "^8.0.0",
     "ms": "^2.1.3",
     "musicard": "^1.5.2",
-    "opusscript": "^0.0.8",
-    "yt-search": "^2.10.4",
-    "ytdl-core": "^4.11.5"
+    "riffy": "^1.0.3",
+    "riffy-spotify": "^1.0.0"
   }
 }
