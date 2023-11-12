@@ -74,7 +74,7 @@ Inicie o servidor
 
 Aqui sera posta todos as atualizações do bot
 
-Versão 2.0.0
+Versão 2.0.1
 
 ```bash
   - Correção de Bugs
