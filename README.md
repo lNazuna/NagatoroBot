@@ -86,7 +86,7 @@ Versão 2.0.1
   Adicionado a config do bot um servidor lavalink hospedado por mim
   Adicionado o comando dicionar filmes animes
   Adicionado o comando limpar avançado (pode apagar todas as mensagens de um canal ou apagar as mensagens de um user que escolher)
-  Adicionado o comando nuke avançado (pode escolher qual canal quer excluír e escolher quando tipo de canar quer criar)
+  Adicionado o comando nuke avançado (pode escolher qual canal quer excluír e escolher quando tipo de canal quer criar)
 ```
 
 Versão 2.0.0
