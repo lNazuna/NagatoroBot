@@ -10,10 +10,10 @@ module.exports = {
     SpotifySecret: "", // https://developer.spotify.com/
     nodes: [
         {
-            host: "n1.ll.darrennathanael.com",
-            port: 2269,
+            host: "132.145.68.135",
+            port: 6016,
             name: 'LavaLink 1',
-            password: "glasshost1984",
+            password: "nagatoroLavaLink#@#@",
             secure: false
         }
     ],

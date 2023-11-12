@@ -153,6 +153,25 @@ module.exports = {
                 }
             ],
         },
+        {
+            name: "adicionar-filme",
+            description: "Adicione filmes de animes a base de dados",
+            type: ApplicationCommandOptionType.Subcommand,
+            options: [
+                {
+                    name: "url-myanimelist",
+                    description: "insira o url do filme para adicionar os informações do filme usar ver aqui https://myanimelist.net/",
+                    type: ApplicationCommandOptionType.String,
+                    required: true,
+                },
+                {
+                    name: "url-download",
+                    description: "insira o url do filme para para o download/Assistir (tem de ser .mp4)",
+                    type: ApplicationCommandOptionType.String,
+                    required: true,
+                }
+            ],
+        },
     ],
     /**
      * 
@@ -172,15 +191,15 @@ module.exports = {
             const name = options.getString('nome');
 
             kand.getAnimeSerieInfo({ mal_name: `${name}` }).then((response) => {
-
-                var animeURL = response.content.AnimeUrl
-                var AnimeURLReplace = animeURL.replace(/( )/g,"%");
     
-                if(response[0]){
+                if(response.error){
     
                     editReply(interaction, "❌", response.error)
     
                 } else {
+
+                    var animeURL = response.content.AnimeUrl
+                    var AnimeURLReplace = animeURL.replace(/( )/g,"%");
     
                     const embed = new EmbedBuilder()
                     .setTitle(`${response.content.AnimeName} | ${response.content.AnimeJapaneseTitle}`)
@@ -278,14 +297,14 @@ module.exports = {
 
             kand.getAnimeMovieInfo({ mal_name: `${name}` }).then((response) => {
 
-                var movie = response.content.MovieUrl
-                var movieReplace = movie.replace(/( )/g,"%");
-
                 if(response.error){
     
                     editReply(interaction, "❌", response.error)
     
                 } else {
+
+                    var movie = response.content.MovieUrl
+                    var movieReplace = movie.replace(/( )/g,"%");    
     
                     const embed = new EmbedBuilder()
                     .setTitle(`${response.content.MovieName} | ${response.content.MovieJapaneseTitle}`)
@@ -476,15 +495,15 @@ module.exports = {
             const anime = options.getString('nome');
 
             kand.getAnimeMovieInfo({ mal_name: `${anime}` }).then((response) => {
-
-                var download = response.content.MovieInfo[0].MovieDownload
-                var downloadReplace = download.replace(/( )/g,"%");
                 
                 if(response.error){
     
                     editReply(interaction, "❌", response.error)
     
                 } else {
+
+                    var download = response.content.MovieInfo[0].MovieDownload
+                    var downloadReplace = download.replace(/( )/g,"%");
     
                     const embed = new EmbedBuilder()
                     .setTitle(`${response.content.MovieName}`)
@@ -552,7 +571,7 @@ module.exports = {
 
             kand.addAnimeSeasonInfo({ mal_id: `${animeID}`, season_number: `${seasonNumber}` }).then(response => {
 
-                if(response[0]){
+                if(response.error){
     
                     editReply(interaction, "❌", response.error)
     
@@ -573,7 +592,26 @@ module.exports = {
 
             kand.addAnimeEpisodeInfo({ mal_id: `${animeID}`, season_number: `${seasonNumber}`, episode_number: `${episodeNumber}`, download_uploader_videomp4_url: `${uploadEpisode}` }).then(response => {
 
-                if(response[0]){
+                if(response.error){
+    
+                    editReply(interaction, "❌", response.error)
+    
+                } else {
+
+                    editReply(interaction, "✅", response.content.sucess)
+
+                }
+
+            })
+
+        } if (options.getSubcommand() === "adicionar-filme") {
+
+            const animeURL = options.getString('url-myanimelist');
+            const animeDownload = options.getString('url-download');
+
+            kand.addAnimeMovieInfo({ mal_url: `${animeURL}`, download_uploader_videomp4_url: `${animeDownload}` }).then(response => {
+
+                if(response.error){
     
                     editReply(interaction, "❌", response.error)
     
