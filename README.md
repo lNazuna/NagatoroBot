@@ -79,6 +79,21 @@ Versão 2.0.0
 ```bash
   - Correção de Bugs
 
+  Corrigido problema de adicionar animes e assistir
+
+  - Adicionado
+
+  Adicionado a config do bot um servidor lavalink hospedado por mim
+  Adicionado o comando dicionar filmes animes
+  Adicionado o comando limpar avançado (pode apagar todas as mensagens de um canal ou apagar as mensagens de um user que escolher)
+  Adicionado o comando nuke avançado pode escolher qual canal quer excluír e escolher quando tipo de canar quer criar)
+```
+
+Versão 2.0.0
+
+```bash
+  - Correção de Bugs
+
   Corrigido de adicionar episódios de anime
   Corrigido de adicionar temporadas de animes
   
