@@ -74,6 +74,26 @@ Inicie o servidor
 
 Aqui sera posta todos as atualizações do bot
 
+## Versão 2.0.2
+
+```bash
+  - Atualizado
+  
+  Atualizado discord.js para a ultima versão
+
+  - Adicionado
+
+  Reformulado o comando waifu (agora com sistema de menu onde pode selecionar quais imagens quer gerar)
+  Adicionado sistema de giveaway (sorteio) usando menu e botões 
+  Adicionado sistema de logs gerais (criar/update/eliminar canais, emojis, mensagens e cargos)
+  Adicionado sistema de moderação com logs (banir, desbanir e expulsar)
+  Adicionado comando para adicionar emojis de qualquer servidor no seu
+  Adicionado comando avançado limpar
+  Adicionado comando avançado nuke apaga esse canal e cria outro exatamente igual ao que foi eliminado
+  Adicionado comando ajuda
+  Adicionado comando youtube-mp4 (pode fazer download de videos do youtube através do bot)
+```
+
 Versão 2.0.1
 
 ```bash
