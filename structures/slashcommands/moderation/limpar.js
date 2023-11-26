@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, ApplicationCommandOptionType, EmbedBuilder,  } = require('discord.js');
+const { Client, CommandInteraction, ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const { reply } = require("../../systems/reply")
 
 module.exports = {

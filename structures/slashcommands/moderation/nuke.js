@@ -1,5 +1,6 @@
-const { Client, CommandInteraction, ApplicationCommandOptionType, EmbedBuilder, ButtonBuilder, ButtonStyle, ChannelType, ActionRowBuilder, } = require('discord.js');
+const { Client, CommandInteraction, ApplicationCommandOptionType, EmbedBuilder, ButtonBuilder, ButtonStyle, ChannelType, ActionRowBuilder } = require('discord.js');
 const { reply } = require("../../systems/reply")
+const { editReply } = require("../../systems/editReply")
 const ms = require("ms");
 
 module.exports = {
@@ -57,13 +58,7 @@ module.exports = {
 
         const channelID = await guild.channels.cache.get(channel.id);
 
-        if (!channel) return interaction.reply({
-            embeds: [
-                new EmbedBuilder()
-                    .setColor("Red")
-                    .setDescription(`\`⚠️\` **•** O canal especificado não existe.`)
-            ]
-        })
+        if (!channel) return reply(interaction, "⚠️", "**•** O canal especificado não existe.", true)
 
         const row = new ActionRowBuilder()
             .addComponents(
@@ -132,14 +127,7 @@ module.exports = {
                         topic: channel.topic || null,
                         parent: channel.parent,
                     }).catch(err => {
-                        interaction.reply({
-                            embeds: [
-                                new EmbedBuilder()
-                                    .setColor("Red")
-                                    .setDescription(`\`⚠️\` **•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.`)
-                            ],
-                            ephemeral: true
-                        })
+                        reply(interaction, "⚠️", "**•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.", true)
                     });
 
                     const channelembed = new EmbedBuilder()
@@ -168,14 +156,7 @@ module.exports = {
                         type: ChannelType.GuildVoice,
                         parent: channel.parent,
                     }).catch(err => {
-                        interaction.reply({
-                            embeds: [
-                                new EmbedBuilder()
-                                    .setColor("Red")
-                                    .setDescription(`\`⚠️\` **•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.`)
-                            ],
-                            ephemeral: true
-                        })
+                        reply(interaction, "⚠️", "**•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.", true)
                     });
 
                     const channelembed = new EmbedBuilder()
@@ -203,14 +184,7 @@ module.exports = {
                         topic: channel.topic || null,
                         parent: channel.parent,
                     }).catch(err => {
-                        interaction.editReply({
-                            embeds: [
-                                new EmbedBuilder()
-                                    .setColor("Red")
-                                    .setDescription(`\`⚠️\` **•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.`)
-                            ],
-                            ephemeral: true
-                        })
+                        editReply(interaction, "⚠️", "**•** Não consigo destruir o canal; certifique-se de que tenho a permissão *ManageChannels*.", true)
                     });
 
                     const channelembed = new EmbedBuilder()

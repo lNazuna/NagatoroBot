@@ -5,7 +5,7 @@ const kand = new Kandaraku();
 
 module.exports = {
     name: 'anime',
-    description: 'veja as informações do anime',
+    description: 'adicione ou veja animes',
     options: [
         {
             name: "procurar",

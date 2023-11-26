@@ -4,7 +4,7 @@ const kand = new Kandaraku();
 
 module.exports = {
     name: 'chat',
-    description: 'fale com o nagatoro bot',
+    description: 'Fale com o bot',
     options: [
         {
             name: 'mensagem',

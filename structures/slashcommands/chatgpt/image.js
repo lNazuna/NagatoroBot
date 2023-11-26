@@ -4,7 +4,7 @@ const kand = new Kandaraku();
 
 module.exports = {
     name: 'imagem',
-    description: 'fale com o nagatoro bot',
+    description: 'peça ao bot para gerar uma imagem',
     options: [
         {
             name: 'descrição',
