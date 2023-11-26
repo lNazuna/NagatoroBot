@@ -162,7 +162,7 @@ Versão 1.0.0
 
 ## Suporte
 
-Para suporte, entre no nosso servidor de supoprte https://discord.gg/XyQGX98qj5.
+Para suporte, entre no nosso servidor de suporte https://discord.gg/XyQGX98qj5.
 
 
 ## Autores
