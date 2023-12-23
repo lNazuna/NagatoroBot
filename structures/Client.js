@@ -45,7 +45,7 @@ client.riffy = new Riffy(client, nodes, {
         if (guild) guild.shard.send(payload);
     },
     defaultSearchPlatform: "ytmsearch",
-    restVersion: "v3",
+    restVersion: "v4",
     plugins: [spotify]
 });
 
